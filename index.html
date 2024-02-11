@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine's Day Surprise</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: pink; /* Couleur de fond pour le thème de la Saint-Valentin */
+  }
+  button {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #yesBtn {
+    background-color: green;
+  }
+  #noBtn {
+    background-color: red;
+    margin-top: 10px; /* Espacement initial entre les boutons */
+  }
+</style>
+</head>
+<body>
+
+<h2>Vu que t'es bitchless, laisse moi remplacer ton ex le 14 stp</h2>
+<button id="yesBtn" style="transform: scale(1);">Oui bb chou</button>
+<button id="noBtn">Non fdp</button>
+
+<script>
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const noMessages = ["ntr mdrrr", "Ta pote t'a abandonné abuse", "bztmr", "FRR", "t'a pas le choix", "mdrr le bouton est censé grossir", "tsai le mec qui sais pas coder","LIN","On a le beurre et l'argent du beuure","et dans l'appart on fume la beuh","zzzzzz","t'a fini ta peinture?","envie de jouer a lol","on est censé faire quoi un 14fevrier??","victime","ARAMSAMSAM ARAMSAMSAM","supa idol dezaolung","Gedagedegedageda o I've been married a long time ago Where did you come from Where did you go where did you come from Cotton eye joe","abuse j'ai pas ton temps, mange toi la boucle infinie"];
+
+let noMessagesIndex = 0;
+
+noBtn.addEventListener("click", function() {
+  noMessagesIndex = (noMessagesIndex + 1) % noMessages.length;
+  noBtn.textContent = noMessages[noMessagesIndex];
+});
+
+yesBtn.addEventListener("click", function() {
+  // Efface tout le contenu de la page
+  document.body.innerHTML = '';
+  // Crée un nouveau conteneur pour les images et le message
+  const container = document.createElement("div");
+  container.style.display = "flex";
+  container.style.flexWrap = "wrap";
+  container.style.justifyContent = "center";
+  container.style.alignItems = "center";
+  container.style.height = "100vh";
+  document.body.appendChild(container);
+
+  // Ajoute des images à la page
+  for (let i = 0; i < 100; i++) { // Vous pouvez ajuster le nombre d'images selon vos besoins
+    const img = document.createElement("img");
+    img.src = "noeu.png";
+    img.style.width = "100px"; // Ajustez selon la taille souhaitée
+    img.style.height = "auto";
+    img.style.margin = "10px";
+    container.appendChild(img);
+  }
+
+  // Ajoute également le message
+  const message = document.createElement("div");
+  message.textContent = "YESSIRRRR";
+  message.style.position = "fixed";
+  message.style.top = "0";
+  message.style.width = "100%";
+  message.style.textAlign = "center";
+  message.style.fontSize = "2rem";
+  message.style.color = "white";
+  message.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  document.body.appendChild(message);
+});
+</script>
+
+</body>
+</html>
