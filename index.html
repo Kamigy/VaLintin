@@ -63,7 +63,12 @@ yesBtn.addEventListener("click", function() {
 
   // Ajoute des images à la page
   for (let i = 0; i < 100; i++) { // Vous pouvez ajuster le nombre d'images selon vos besoins
-  message.textContent = "image coquette";
+    const img = document.createElement("img");
+    img.src = "noeu.png";
+    img.style.width = "100px"; // Ajustez selon la taille souhaitée
+    img.style.height = "auto";
+    img.style.margin = "10px";
+    container.appendChild(img);
   }
 
   // Ajoute également le message
